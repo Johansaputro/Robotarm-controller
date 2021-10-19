@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 var router = express.Router();
 var roboname = "";
 var datatostring = "";
+var counter = 0;
 var mysql = require("mysql");
 // var timeout = require('connect-timeout');
 var db = mysql.createPool({
@@ -54,6 +55,7 @@ app.post('/id', (req,res) => {
 
 app.post('/moveit', (req,res) => {
   var moveType = req.body.movement;
+  counter = counter + 1
   // counterr = counterr + 1;
 
   db.query("UPDATE Robo SET Movement = ? WHERE RoboId = ?",[moveType, roboname] , function(err, rs) {
@@ -67,6 +69,9 @@ app.post('/moveit', (req,res) => {
     // datatostring = JSON.stringify(datatoSend);
     // console.log("Movement updated");
   });
+  db.query("UPDATE Robo SET Sequence = ? WHERE RoboID = ?",[counter, roboname] , function(err,rs) {
+    if (err) throw err;
+  })
   // db.query("UPDATE Mobil SET Sequence = ? WHERE IdMobil = ?",[counterr, name1], function(err,rs) {
   //   if (err) throw err;
   //   // console.log("Sequence updated")
@@ -79,7 +84,7 @@ app.get('/id', (req,res) => {
 })
 
 app.get('/moveit', (req, res) => {
-  db.query("SELECT * From Robo", function(err, rs) {
+  db.query("SELECT * From Robo WHERE RoboId = ?",[roboname], function(err, rs) {
     if (err) throw err;
     datatostring = JSON.stringify(rs);
   })
