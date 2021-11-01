@@ -3,7 +3,7 @@ var numofarrow = document.querySelectorAll(".arrow").length;
 for (i=0; i<numofarrow; i++) {
   document.querySelectorAll(".arrow")[i].addEventListener("click", function() {
     var innerele = this.innerText;
-    // console.log(innerele)
+    console.log(innerele)
     buttonAnimation(innerele);
   });
 };
@@ -34,30 +34,12 @@ function updateId() {
   input.value = selectedValue;
 }
 
-function moveUp() {
+function move(tipeGerak) {
   var input = document.getElementById('hiddenInput2');
-  input.value = "Up";
+  input.value = tipeGerak;
+  console.log(tipeGerak);
 };
 
-function moveDown() {
-  var input = document.getElementById('hiddenInput2');
-  input.value = "Down";
-};
-
-function moveLeft() {
-  var input = document.getElementById('hiddenInput2');
-  input.value = "Left";
-};
-
-function moveRight() {
-  var input = document.getElementById('hiddenInput2');
-  input.value = "Right";
-};
-
-function moveClaw() {
-  var input = document.getElementById('hiddenInput2');
-  input.value = "Claw";
-}
 
 $(document).on("keypress", 'form', function (e) {
     var code = e.keyCode || e.which;

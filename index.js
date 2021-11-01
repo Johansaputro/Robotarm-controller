@@ -40,7 +40,7 @@ app.get('/', (req,res) => {
 
 app.post('/id', (req,res) => {
   roboname = req.body.roboid;
-  console.log(roboname);
+  // console.log(roboname);
   // db.query("INSERT INTO Robo(RoboId) VALUES (?)",[roboname] , function(err, rs) {
   //   if (err) throw err;
   //   console.log("1 record inserted");
@@ -49,6 +49,9 @@ app.post('/id', (req,res) => {
     if (err) throw err;
     // console.log("Sequence updated")
   });
+  db.query("UPDATE Robo SET Sequence = ? WHERE RoboID = ?",[0, roboname] , function(err,rs) {
+    if (err) throw err;
+  })
   // res.redirect('/');
   res.status(204).send();
 });
