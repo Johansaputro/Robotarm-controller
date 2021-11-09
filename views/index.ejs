@@ -80,32 +80,44 @@
   <div id="buttons" class="dissappear">
     <form class="buttonform" action="/moveit" method="post">
       <input type="hidden" name="movement" id="hiddenInput2">
-      <div class="up UpElbow">
-        <button class="arrow" type="submit" name="button" onclick="move('Up')"><i class="fas fa-arrow-circle-up fa-5x"></i>UpElbow</button>
+      <div class="">
+        <div class="sides up UpShoulder">
+          <button class="arrow" type="submit" name="button" onclick="move('UpShoulder')"><i class="fas fa-arrow-circle-up fa-5x"></i>UpShoulder</button>
+        </div>
+        <div class="sides up UpElbow">
+          <button class="arrow" type="submit" name="button" onclick="move('Up')"><i class="fas fa-arrow-circle-up fa-5x"></i>UpElbow</button>
+        </div>
+        <div class="sides up UpWrist">
+          <button class="arrow" type="submit" name="button" onclick="move('UpWrist')"><i class="fas fa-arrow-circle-up fa-5x"></i>UpWrist</button>
+        </div>
       </div>
-      <div class="up UpWrist">
-        <button class="arrow" type="submit" name="button" onclick="move('UpWrist')"><i class="fas fa-arrow-circle-up fa-5x"></i>UpWrist</button>
+      <div class="">
+        <div class="sides LeftBottom">
+          <button class="arrow" type="submit" name="button" onclick="move('Left')"><i class="fas fa-arrow-circle-left fa-5x"></i>LeftBottom</button>
+        </div>
+        <div class="sides small LeftClaw">
+          <button class="arrow" type="submit" name="button" onclick="move('LeftClaw')"><i class="fas fa-arrow-circle-left fa-3x"></i>LeftClaw</button>
+        </div>
+        <div class="sides Claw">
+          <button class="arrow" type="submit" name="button" onclick="move('Claw')"><i class="fas fa-hand-spock fa-5x"></i>Claw</button>
+        </div>
+        <div class="sides small RightClaw">
+          <button class="arrow" type="submit" name="button" onclick="move('RightClaw')"><i class="fas fa-arrow-circle-right fa-3x"></i>RightClaw</button>
+        </div>
+        <div class="sides RightBottom">
+          <button class="arrow" type="submit" name="button" onclick="move('Right')"><i class="fas fa-arrow-circle-right fa-5x"></i>RightBottom</button>
+        </div>
       </div>
-      <div class="sides LeftBottom">
-        <button class="arrow" type="submit" name="button" onclick="move('Left')"><i class="fas fa-arrow-circle-left fa-5x"></i>LeftBottom</button>
-      </div>
-      <div class="sides small LeftClaw">
-        <button class="arrow" type="submit" name="button" onclick="move('LeftClaw')"><i class="fas fa-arrow-circle-left fa-3x"></i>LeftClaw</button>
-      </div>
-      <div class="sides Claw">
-        <button class="arrow" type="submit" name="button" onclick="move('Claw')"><i class="fas fa-hand-spock fa-5x"></i>Claw</button>
-      </div>
-      <div class="sides small RightClaw">
-        <button class="arrow" type="submit" name="button" onclick="move('RightClaw')"><i class="fas fa-arrow-circle-right fa-3x"></i>RightClaw</button>
-      </div>
-      <div class="sides RightBottom">
-        <button class="arrow" type="submit" name="button" onclick="move('Right')"><i class="fas fa-arrow-circle-right fa-5x"></i>RightBottom</button>
-      </div>
-      <div class="bottom DownElbow">
-        <button class="arrow" type="submit" name="button" onclick="move('Down')"><i class="fas fa-arrow-circle-down fa-5x"></i>DownElbow</button>
-      </div>
-      <div class="bottom DownWrist">
-        <button class="arrow" type="submit" name="button" onclick="move('DownWrist')"><i class="fas fa-arrow-circle-down fa-5x"></i>DownWrist</button>
+      <div class="">
+        <div class="sides bottom DownShoulder">
+          <button class="arrow" type="submit" name="button" onclick="move('DownShoulder')"><i class="fas fa-arrow-circle-down fa-5x"></i>DownShoulder</button>
+        </div>
+        <div class="sides bottom DownElbow">
+          <button class="arrow" type="submit" name="button" onclick="move('Down')"><i class="fas fa-arrow-circle-down fa-5x"></i>DownElbow</button>
+        </div>
+        <div class="sides bottom DownWrist">
+          <button class="arrow" type="submit" name="button" onclick="move('DownWrist')"><i class="fas fa-arrow-circle-down fa-5x"></i>DownWrist</button>
+        </div>
       </div>
     </form>
     <button id="getback" type="getback" class="btn btn-dark" name="getback">Choose Other Robo</button>
